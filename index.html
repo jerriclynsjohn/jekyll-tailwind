@@ -7,3 +7,58 @@ layout: default
 {% for post in site.posts %}
   <a href="{{ post.url }}">{{ post.title }}</a>
 {% endfor %}
+
+<section class="pt-32 px-20 pb-24 text-gray-800">
+  <!-- Heading -->
+  <h2 class="font-semibold text-3xl">Hot Picks</h2>
+  <!-- New link -->
+  <a href="#" class="block mt-8 -ml-1">
+      <div class="inline-flex rounded-full text-yellow-800 font-medium bg-yellow-200 flex items-center">
+          <div class="border border-yellow-800 ml-1 px-4 rounded-full my-1 uppercase ">New!</div>
+          <p class="ml-4">Exotic fruits and vegetables in stock!</p>
+          <div class="mx-4">
+              <svg class="h-4 fill-current" viewBox="0 0 17 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                      d="M9.20711 3.3344C8.81658 2.94387 8.18342 2.94387 7.79289 3.3344C7.40237 3.72492 7.40237 4.35809 7.79289 4.74861L11.0442 7.99988H3.54297C2.99068 7.99988 2.54297 8.44759 2.54297 8.99988C2.54297 9.55216 2.99068 9.99988 3.54297 9.99988H11.0441L7.79289 13.2511C7.40237 13.6416 7.40237 14.2748 7.79289 14.6653C8.18342 15.0558 8.81658 15.0558 9.20711 14.6653L14.1352 9.73721C14.3346 9.55439 14.4596 9.29174 14.4596 8.99988C14.4596 8.70849 14.335 8.44621 14.1362 8.26344L9.20711 3.3344Z"
+                  />
+              </svg>
+          </div>
+      </div>
+  </a>
+  <!-- Horizontal Scrolling -->
+  <div class="overflow-hidden w-full">
+      <div class="overflow-auto flex scrollbar-none scrollbar-w-2 scrollbar-track-gray-lighter scrollbar-thumb-gray scrollbar-thumb-rounded">
+          {% for produce in site.data.fruits-veggies %}
+          <!-- Card -->
+          <div class=" w-96 mr-6 pt-24 pb-4">
+              <div class="flex items-center justify-between bg-white border border-gray-200 rounded-t-lg pl-6 pr-2 py-4">
+                  <div>
+                      <h3 class="text-xl font-semibold text-green-800">{{produce.name}}</h3>
+                      <p class="uppercase text-xs tracking-widest text-gray-500">{{produce.location}}</p>
+                  </div>
+                  <div class=" -mt-16">
+                      <img class="h-32" src="./assets/images/fruits-veggies/{{produce.img}}" alt="{{produce.name}}" />
+                  </div>
+              </div>
+              <div class="px-6 border-l border-r border-b border-gray-200 rounded-b-lg py-4">
+                  <div>
+                      <p class="text-sm">
+                          {{produce.brief}}
+                          <a href="{{produce.link}}" class="text-orange-500 hover:text-orange-700 hover:underline pl-2">Know More</a>
+                      </p>
+                  </div>
+                  <div class="mt-4">
+                      <p class="inline px-4 py-1 rounded-full bg-yellow-200 font-semibold tracking-wider text-green-800 text-sm uppercase">
+                          {{produce.type}}
+                      </p>
+                      <div>
+                          <!-- Icons -->
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <!-- End of Card -->
+          {% endfor %}
+      </div>
+  </div>
+</section>
