@@ -17,6 +17,8 @@ plugins:
   - jekyll-postcss
   - jekyll-purgecss
 
+css_dir: "/assets/css/"
+
 # jekyll-seo-tag configuration
 author: ""
 url: ""
